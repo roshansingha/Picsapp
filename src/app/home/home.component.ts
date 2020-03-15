@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { HttpClient } from "@angular/common/http";
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -22,4 +22,19 @@ export class HomeComponent implements OnInit {
     this.selected_img = a.src;
     this.desc = a.desc;
   }
+  selectedFile = null;
+  img_url;
+  onFileSelected(event) {
+    console.log(event);
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+    var reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.img_url = event.target.result;
+      console.log(this.img_url);
+      this.img_array.push({ src: this.img_url, desc: "new Image" });
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+  onUpload() {}
 }

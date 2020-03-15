@@ -23,7 +23,6 @@
             class="form-control"
             id="email"
             placeholder="Mobile number, Username or email"
-            readonly
           />
         </div>
         <div class="form-group">
@@ -32,7 +31,6 @@
             type="password"
             id="password"
             placeholder="Password"
-            readonly
           />
         </div>
 
@@ -45,7 +43,9 @@
     <div class="card " style="margin-top:30px;max-width: 400px;height: 70px;">
       <a style="margin-top: auto;margin-bottom: auto;"
         >Don't have an account ?
-        <strong class="text-primary">Sign Up</strong></a
+        <strong class="text-primary" style="cursor: pointer;" (click)="signUp()"
+          >Sign Up</strong
+        ></a
       >
     </div>
   </div>

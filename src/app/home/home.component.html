@@ -31,9 +31,22 @@
     </div>
   </nav>
 </div>
+<div style="text-align: end;">
+  <label
+    class="btn btn-default btn-file btn-outline-dark"
+    style="margin-top: 80px;"
+  >
+    Upload new image
+    <input
+      type="file"
+      style="display: none;"
+      (change)="onFileSelected($event)"
+    />
+  </label>
+</div>
 <div
   class="row"
-  style="margin-top: 60px; margin-left: 70px;margin-right: 70px;"
+  style="margin-top: 20px; margin-left: 70px;margin-right: 70px;"
 >
   <div
     class="col-md-3 col-sm-6 col-xm-12 mb-2"
